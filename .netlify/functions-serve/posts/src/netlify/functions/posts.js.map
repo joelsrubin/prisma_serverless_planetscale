@@ -1,0 +1,8 @@
+{
+  "version": 3,
+  "sources": ["../../../../../../Users/joelrubin/Desktop/dev/prisma-serverless/netlify/functions/posts.ts"],
+  "sourceRoot": "/var/folders/dg/_2pwvz4549b80by7st0t30b80000gn/T/tmp-11729-LvUISM1IiDqx",
+  "sourcesContent": ["import { PrismaClient } from '@prisma/client';\nconst prisma = new PrismaClient();\n\nexport async function handler() {\n  try {\n    const posts = await prisma.post.findMany();\n    return {\n      statusCode: 200,\n      header: {\n        'Content-Type': 'application/json',\n      },\n      body: JSON.stringify(posts),\n    };\n  } catch (error) {\n    return {\n      statusCode: 500,\n      body: JSON.stringify(error),\n    };\n  }\n}\n"],
+  "mappings": ";;;;;;;;;;;;;;;;;;;;;;;;;AAAA;AAAA;AAAA;AAAA,oBAA6B;AAC7B,IAAM,SAAS,IAAI;AAEnB,yBAAgC;AAC9B,MAAI;AACF,UAAM,QAAQ,MAAM,OAAO,KAAK;AAChC,WAAO;AAAA,MACL,YAAY;AAAA,MACZ,QAAQ;AAAA,QACN,gBAAgB;AAAA;AAAA,MAElB,MAAM,KAAK,UAAU;AAAA;AAAA,WAEhB,OAAP;AACA,WAAO;AAAA,MACL,YAAY;AAAA,MACZ,MAAM,KAAK,UAAU;AAAA;AAAA;AAAA;",
+  "names": []
+}

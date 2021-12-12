@@ -1,0 +1,8 @@
+{
+  "version": 3,
+  "sources": ["../../../../../../Users/joelrubin/Desktop/dev/prisma-serverless/netlify/functions/post.ts"],
+  "sourceRoot": "/var/folders/dg/_2pwvz4549b80by7st0t30b80000gn/T/tmp-11729-dbq6nXk0XdXY",
+  "sourcesContent": ["import { PrismaClient } from '@prisma/client';\nconst prisma = new PrismaClient();\n\nexport async function handler(event) {\n  const { title, content } = JSON.parse(event.body);\n  try {\n    const post = await prisma.post.create({\n      data: {\n        title,\n        content,\n      },\n    });\n    return {\n      statusCode: 200,\n      body: 'post successfully created',\n    };\n  } catch (e) {\n    return {\n      statusCode: 500,\n      body: JSON.stringify(e),\n    };\n  }\n}\n"],
+  "mappings": ";;;;;;;;;;;;;;;;;;;;;;;;;AAAA;AAAA;AAAA;AAAA,oBAA6B;AAC7B,IAAM,SAAS,IAAI;AAEnB,uBAA8B,OAAO;AACnC,QAAM,EAAE,OAAO,YAAY,KAAK,MAAM,MAAM;AAC5C,MAAI;AACF,UAAM,OAAO,MAAM,OAAO,KAAK,OAAO;AAAA,MACpC,MAAM;AAAA,QACJ;AAAA,QACA;AAAA;AAAA;AAGJ,WAAO;AAAA,MACL,YAAY;AAAA,MACZ,MAAM;AAAA;AAAA,WAED,GAAP;AACA,WAAO;AAAA,MACL,YAAY;AAAA,MACZ,MAAM,KAAK,UAAU;AAAA;AAAA;AAAA;",
+  "names": []
+}
