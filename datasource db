@@ -1,4 +1,0 @@
-datasource db {
-  provider = "mysql"
-  url = "mysql://nxtj8ev1tow5:pscale_pw_kM9BiN12dC96jSrj47hZOPEa84O29f298lc5IteEtz4@n11xtdbhhv46.us-east-2.psdb.cloud/prisma-serverless?sslaccept=strict"
-}
